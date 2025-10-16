@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cotización de Servicios: Ilustración y Animación</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Replaced html2pdf with html2canvas and jsPDF for better rendering -->
+    <!-- Using html2canvas and jsPDF for PDF generation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -109,7 +109,9 @@
                     <h1 class="title-main">
                         Cotización de Servicios Creativos
                     </h1>
-                    <video src="personaje.mp4" width="1280" height="720" autoplay loop muted playsinline class="mx-auto my-8 max-w-full md:max-w-xl rounded-lg"></video>
+                    <!-- DEV NOTE: Video path updated to a relative path. The video file 'personaje.mp4' must be in the same folder as this HTML file. -->
+                    <!-- The video itself will not be captured in the PDF export due to library limitations. -->
+                    <video src="personaje.mp4" autoplay loop muted playsinline class="mx-auto my-8 max-w-full md:max-w-xl rounded-lg"></video>
                     <p class="text-lg text-zinc-400">
                         Presentamos nuestras cotizaciones para los servicios de ilustración y animación. Cada servicio se cotiza de forma independiente.
                     </p>
@@ -146,7 +148,7 @@
                             <div class="bg-[var(--card-item-bg)] p-6 rounded-lg border border-[var(--border-color)]">
                                 <h3 class="mb-4 flex items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--accent-color)] mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                      <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                     </svg>
                                     Proceso y Tiempos de Entrega
                                 </h3>
@@ -173,7 +175,7 @@
                                         </ul>
                                     </div>
                                     <div class="pt-3">
-                                         <p class="font-semibold text-zinc-100 text-base text-center bg-zinc-950/50 p-3 rounded-lg border border-zinc-700">Tiempo Total Estimado: <span class="text-[var(--accent-color)]">16 días hábiles</span></p>
+                                        <p class="font-semibold text-zinc-100 text-base text-center bg-zinc-950/50 p-3 rounded-lg border border-zinc-700">Tiempo Total Estimado: <span class="text-[var(--accent-color)]">16 días hábiles</span></p>
                                     </div>
                                 </div>
                             </div>
@@ -182,20 +184,20 @@
                             <div class="mt-6 bg-[var(--card-item-bg)] p-6 rounded-lg border border-[var(--border-color)]">
                                  <h3 class="mb-6">Detalles del Servicio</h3>
                                  <div class="space-y-4">
-                                    <div class="flex items-start gap-4">
-                                        <svg class="h-6 w-6 text-[var(--accent-color)] flex-shrink-0 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                        <div>
-                                            <p class="font-medium text-zinc-100">Diseño de 6 personajes</p>
-                                            <p class="text-sm text-zinc-400">Incluye 3 poses distintas para cada uno.</p>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-start gap-4">
-                                        <svg class="h-6 w-6 text-[var(--accent-color)] flex-shrink-0 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0l.879-.659M7.5 14.25l.879.659c1.171.879 3.07.879 4.242 0l.879-.659M12 21a9 9 0 100-18 9 9 0 000 18z" /></svg>
-                                        <div>
-                                            <p class="font-medium text-zinc-100">Q2,600.00 por personaje</p>
-                                            <p class="text-sm text-zinc-400">Costo detallado: 6 x Q2,600.00</p>
-                                        </div>
-                                    </div>
+                                     <div class="flex items-start gap-4">
+                                         <svg class="h-6 w-6 text-[var(--accent-color)] flex-shrink-0 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                         <div>
+                                             <p class="font-medium text-zinc-100">Diseño de 6 personajes</p>
+                                             <p class="text-sm text-zinc-400">Incluye 3 poses distintas para cada uno.</p>
+                                         </div>
+                                     </div>
+                                     <div class="flex items-start gap-4">
+                                         <svg class="h-6 w-6 text-[var(--accent-color)] flex-shrink-0 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0l.879-.659M7.5 14.25l.879.659c1.171.879 3.07.879 4.242 0l.879-.659M12 21a9 9 0 100-18 9 9 0 000 18z" /></svg>
+                                         <div>
+                                             <p class="font-medium text-zinc-100">Q2,600.00 por personaje</p>
+                                             <p class="text-sm text-zinc-400">Costo detallado: 6 x Q2,600.00</p>
+                                         </div>
+                                     </div>
                                 </div>
                             </div>
                         </div>
@@ -215,7 +217,7 @@
                             <div class="bg-[var(--card-item-bg)] p-6 rounded-lg border border-[var(--border-color)]">
                                 <h3 class="mb-4 flex items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--accent-color)] mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                      <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                     </svg>
                                     Proceso y Tiempos de Entrega
                                 </h3>
@@ -239,7 +241,7 @@
                                         </ul>
                                     </div>
                                     <div class="pt-3">
-                                         <p class="font-semibold text-zinc-100 text-base text-center bg-zinc-950/50 p-3 rounded-lg border border-zinc-700">Total Estimado por Video: <span class="text-[var(--accent-color)]">10 días hábiles</span></p>
+                                        <p class="font-semibold text-zinc-100 text-base text-center bg-zinc-950/50 p-3 rounded-lg border border-zinc-700">Total Estimado por Video: <span class="text-[var(--accent-color)]">10 días hábiles</span></p>
                                     </div>
                                     <div class="pt-3">
                                         <h4 class="text-amber-400">⚠️ Indicaciones sobre Animación</h4>
@@ -295,7 +297,7 @@
             <div class="card rounded-2xl p-8 mb-16 text-center animated-item" style="transition-delay: 400ms;">
                 <h3 class="mb-4 flex items-center justify-center text-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--accent-color)] mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     ¿Mejorar Tiempos y Costos?
                 </h3>
@@ -362,7 +364,7 @@
 
             totalElements.forEach(el => countObserver.observe(el));
 
-            // --- Función para Descargar PDF (High-resolution method) ---
+            // --- Función para Descargar PDF (CORREGIDA) ---
             const downloadBtn = document.getElementById('download-pdf-btn');
             
             async function downloadAsPDF() {
@@ -373,39 +375,50 @@
                 downloadBtn.textContent = 'Generando...';
                 downloadBtn.disabled = true;
                 
-                // Hide download button before capture
+                // Ocultar el botón de descarga antes de la captura
                 downloadSection.style.display = 'none';
 
                 try {
                     const canvas = await html2canvas(element, {
-                        scale: 2, // Higher scale for better quality
+                        scale: 2, // Mayor escala para mejor calidad
                         useCORS: true,
                         backgroundColor: '#0A0A0A',
                         logging: false,
-                        width: 1920, // Force render at 1920px width
-                        windowWidth: 1920
+                        // Se eliminaron las propiedades de ancho fijo para capturar el contenido tal como se ve
                     });
 
-                    const imgData = canvas.toDataURL('image/jpeg', 0.98);
-                    const { width: imgWidth, height: imgHeight } = canvas;
-                    
+                    const imgData = canvas.toDataURL('image/jpeg', 0.95);
                     const pdf = new jsPDF({
                         orientation: 'portrait',
                         unit: 'pt',
-                        format: 'letter' // Standard letter size
+                        format: 'a4' // Usar un formato estándar como A4
                     });
-
+                    
+                    const imgProps = pdf.getImageProperties(imgData);
                     const pdfWidth = pdf.internal.pageSize.getWidth();
-                    // Calculate the height required to maintain aspect ratio
-                    const pdfHeight = (imgHeight * pdfWidth) / imgWidth;
+                    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
 
-                    pdf.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight);
+                    let heightLeft = pdfHeight;
+                    let position = 0;
+
+                    // Añadir la primera página
+                    pdf.addImage(imgData, 'JPEG', 0, position, pdfWidth, pdfHeight);
+                    heightLeft -= pdf.internal.pageSize.getHeight();
+
+                    // Añadir páginas adicionales si el contenido es más largo
+                    while (heightLeft > 0) {
+                        position = heightLeft - pdfHeight;
+                        pdf.addPage();
+                        pdf.addImage(imgData, 'JPEG', 0, position, pdfWidth, pdfHeight);
+                        heightLeft -= pdf.internal.pageSize.getHeight();
+                    }
+                    
                     pdf.save('Cotizacion_SP-2025-009.pdf');
 
                 } catch (error) {
                     console.error("Error al generar el PDF:", error);
                 } finally {
-                    // Show download button again
+                    // Mostrar el botón de descarga nuevamente
                     downloadSection.style.display = 'block';
                     downloadBtn.textContent = 'Descargar Cotización en PDF';
                     downloadBtn.disabled = false;
