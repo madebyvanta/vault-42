@@ -3,206 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estado de Cuenta | Alex Chajón</title>
+    <title>Alex Chajón - Motion Designer & Web Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5.0.3/index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <style>
-        :root {
-            --bg-color: #0A0A0A;
-            --card-bg: rgba(24, 24, 27, 0.5); /* zinc-900/50 */
-            --card-solid-bg: #18181b; /* zinc-900 */
-            --border-color: rgba(63, 63, 70, 0.5); /* zinc-700/50 */
-            --text-primary: #F4F4F5; /* zinc-100 */
-            --text-secondary: #A1A1AA; /* zinc-400 */
-            --accent-color: #F97316; /* orange-500 */
-        }
-        html {
-            scroll-behavior: smooth;
-        }
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-secondary);
+            font-family: 'Geist Sans', sans-serif;
+            background-color: #0A0A0A;
+            color: #E5E5E5;
         }
-
-        .main-container::before {
+        .gradient-bg::before {
             content: '';
             position: absolute;
             inset: 0;
             background-image:
-                radial-gradient(circle at 15% 90%, rgba(249, 115, 22, 0.08) 0%, transparent 40%),
-                radial-gradient(circle at 85% 20%, rgba(63, 63, 70, 0.1) 0%, transparent 40%);
+                radial-gradient(circle at 15% 90%, rgba(59, 130, 246, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 85% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 40%);
             background-attachment: fixed;
             z-index: -1;
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            backdrop-filter: blur(16px);
-            border: 1px solid var(--border-color);
-            box-shadow: 0px 20px 50px -10px rgba(0,0,0,0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .animated-item {
-            opacity: 0;
-            transform: translateY(24px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .animated-item.is-visible {
-            opacity: 1;
-            transform: translateY(0);
+            will-change: transform; /* Optimization for animation */
         }
     </style>
 </head>
-<body class="antialiased">
+<body class="gradient-bg antialiased overflow-hidden">
 
-    <div class="main-container relative min-h-screen overflow-hidden flex items-center justify-center p-4 md:p-8">
-        <main class="w-full max-w-3xl mx-auto">
+    <div class="flex flex-col items-center justify-center min-h-screen p-6">
+        
+        <header class="text-center" id="header-content">
+            <h1 class="text-5xl md:text-7xl font-black text-white tracking-tighter">
+                Alex Chajón
+            </h1>
+            <p class="text-lg md:text-xl text-gray-400 mt-2">
+                Motion Designer & Web Developer
+            </p>
+        </header>
 
-            <header class="text-center max-w-4xl mx-auto mb-8 md:mb-12 animated-item">
-                <h1 class="text-5xl md:text-6xl font-black text-white tracking-tighter leading-tight mb-4">
-                    Estado de Cuenta
-                </h1>
-                <p id="current-date" class="text-lg text-zinc-400">
-                    <!-- La fecha se insertará aquí con JS -->
-                </p>
-            </header>
+        <div id="contact-box" class="mt-8 bg-black/20 backdrop-blur-md border border-gray-800 rounded-2xl p-6 w-full max-w-xs">
+             <a href="https://wa.me/50233319132" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-center text-gray-400 hover:text-white transition-colors duration-300 text-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="mr-3 group-hover:scale-110 transition-transform"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.487 5.235 3.487 8.413 0 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.523-5.58-1.485l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.371-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.523.074-.797.371-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.413z"/></svg>
+                <span>+502 3331 9132</span>
+            </a>
+        </div>
 
-            <div class="card rounded-2xl p-8 mb-8 animated-item" style="transition-delay: 100ms;">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
-                    <div>
-                        <h3 class="text-sm font-semibold uppercase tracking-wider text-zinc-500 mb-2">CLIENTE</h3>
-                        <p class="text-lg font-medium text-white">Vaovao</p>
-                    </div>
-                    <div>
-                        <h3 class="text-sm font-semibold uppercase tracking-wider text-zinc-500 mb-2">REFERENCIA</h3>
-                        <p class="text-lg font-medium text-white">SP-2025-008</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="card rounded-2xl p-8 md:p-10 animated-item" style="transition-delay: 200ms;">
-                
-                <h3 class="text-xl font-bold text-white mb-6 tracking-wide">Desglose de Producción OLR</h3>
-                
-                <div class="space-y-4">
-                     <!-- Item 2 -->
-                    <div class="flex justify-between items-center bg-zinc-900/70 p-4 rounded-lg">
-                         <div>
-                           <p class="font-medium text-zinc-100">Producción OLR</p>
-                           <p class="text-sm text-zinc-400">3 horas de servicio</p>
-                        </div>
-                        <p class="font-bold text-lg text-white">Q720.00</p>
-                    </div>
-                     <!-- Item 3 -->
-                    <div class="flex justify-between items-center bg-zinc-900/70 p-4 rounded-lg">
-                        <div>
-                           <p class="font-medium text-zinc-100">Hora Extra OLR</p>
-                           <p class="text-sm text-zinc-400">1 hora adicional</p>
-                        </div>
-                        <p class="font-bold text-lg text-white">Q200.00</p>
-                    </div>
-                </div>
-                
-                <hr class="my-8 border-zinc-700/50">
-
-                <div class="max-w-sm ml-auto space-y-4 mb-8">
-                    <div class="flex justify-between items-center">
-                        <span class="text-zinc-400">Subtotal OLR</span>
-                        <span class="font-medium text-zinc-100">Q920.00</span>
-                    </div>
-                     <div class="flex justify-between items-center">
-                        <span class="text-zinc-400">IVA (5%)</span>
-                        <span class="font-medium text-zinc-100">Q46.00</span>
-                    </div>
-                     <div class="flex justify-between items-center text-lg font-semibold pt-4 mt-4 border-t border-zinc-700/50">
-                        <span class="text-white">Total Producción OLR</span>
-                        <span class="text-white">Q966.00</span>
-                    </div>
-                    <div class="flex justify-between items-center text-lg font-semibold">
-                        <div>
-                            <span class="text-white">Saldo Producción Muvit</span>
-                            <p class="text-sm font-normal text-zinc-400">(50% de Q988)</p>
-                        </div>
-                        <span class="text-white">Q494.00</span>
-                    </div>
-                </div>
-                
-                <div class="bg-zinc-950/50 border border-zinc-700 rounded-lg p-6 text-center mt-6">
-                    <p class="text-sm uppercase tracking-widest text-orange-500 mb-2 font-semibold">Total a Pagar</p>
-                    <p id="total-amount" class="text-4xl md:text-5xl font-black text-white tracking-tight" data-final-amount="1460">Q0.00</p>
-                </div>
-            </div>
-            
-            <div class="mt-8 border-t-2 border-orange-500/50 rounded-lg p-8 text-center animated-item" style="background-color: var(--card-solid-bg); transition-delay: 300ms;">
-                <p class="text-sm uppercase tracking-wider text-zinc-500 mb-2">Nota Importante</p>
-                <p class="text-zinc-300"><strong class="font-medium text-zinc-100">Pendiente para futuro pago:</strong> un monto de Q680 + IVA correspondiente a ediciones OLR.</p>
-            </div>
-            
-            <footer class="text-center mt-12 text-zinc-600 animated-item" style="transition-delay: 400ms;">
-                <p>&copy; 2025 Alex Chajón | Motion Graphics & Web Design</p>
-            </footer>
-
-        </main>
+        <footer class="absolute bottom-8 text-center text-gray-600" id="footer-content">
+            <p>&copy; 2025 Alex Chajón. Todos los derechos reservados.</p>
+        </footer>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // --- Fecha Dinámica ---
-            const dateElement = document.getElementById('current-date');
-            const today = new Date();
-            const options = { year: 'numeric', month: 'long', day: 'numeric' };
-            dateElement.textContent = `Fecha: ${today.toLocaleDateString('es-ES', options)}`;
-
-            // --- Animación de Entrada ---
-            const animatedElements = document.querySelectorAll('.animated-item');
-            animatedElements.forEach((el) => {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            setTimeout(() => {
-                                el.classList.add('is-visible');
-                            }, parseFloat(el.style.transitionDelay || '0ms'));
-                            observer.unobserve(el);
-                        }
-                    });
-                }, { threshold: 0.1 });
-                observer.observe(el);
+            // Animación del fondo
+            gsap.to(".gradient-bg::before", {
+                duration: 15,
+                backgroundPosition: "200% 200%",
+                ease: "power1.inOut",
+                repeat: -1,
+                yoyo: true
             });
 
-            // --- Animación de Conteo del Total ---
-            const totalElement = document.getElementById('total-amount');
-            const finalAmount = parseFloat(totalElement.getAttribute('data-final-amount'));
-            const duration = 1500;
+            // Animaciones de entrada
+            gsap.from("#header-content", {
+                duration: 1,
+                opacity: 0,
+                y: 30,
+                ease: "power3.out",
+                delay: 0.2
+            });
 
-            const animateCount = (start, end, duration) => {
-                let startTime = null;
-                const step = (currentTime) => {
-                    if (!startTime) startTime = currentTime;
-                    const progress = Math.min((currentTime - startTime) / duration, 1);
-                    const currentAmount = Math.floor(progress * (end - start) + start);
-                    totalElement.textContent = `Q${currentAmount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-                    if (progress < 1) {
-                        window.requestAnimationFrame(step);
-                    } else {
-                         totalElement.textContent = `Q${end.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-                    }
-                };
-                window.requestAnimationFrame(step);
-            };
+            gsap.from("#contact-box", {
+                duration: 1,
+                opacity: 0,
+                y: 30,
+                ease: "power3.out",
+                delay: 0.4
+            });
             
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if(entry.isIntersecting) {
-                        animateCount(0, finalAmount, duration);
-                        observer.unobserve(totalElement);
-                    }
-                });
+            gsap.from("#footer-content", {
+                duration: 1,
+                opacity: 0,
+                y: 30,
+                ease: "power3.out",
+                delay: 0.6
             });
-            observer.observe(totalElement);
         });
     </script>
 </body>
