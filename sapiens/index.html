@@ -158,31 +158,80 @@
                                     </svg>
                                     Proceso y Tiempos de Entrega
                                 </h3>
-                                <div class="space-y-4 text-sm pl-9">
-                                    <div>
-                                        <h4>Fase 1: Investigación y Bocetaje (7 días hábiles)</h4>
-                                        <ul class="list-disc list-inside text-zinc-400 pl-2 mt-1 space-y-1">
-                                            <li>Investigación y bocetaje detallado con foco en concepto y estilo.</li>
-                                            <li><strong class="text-zinc-300">Entregable:</strong> Bocetos para primera ronda de feedback.</li>
-                                        </ul>
+                                
+                                <!-- Responsive Process Table -->
+                                <div class="mt-4">
+                                    <!-- Headers for Desktop -->
+                                    <div class="hidden md:grid md:grid-cols-[1fr_1fr_2fr_2fr] gap-x-6 text-sm font-semibold text-zinc-400 border-b border-zinc-700 pb-3 mb-3">
+                                        <div>Fase</div>
+                                        <div>Duración</div>
+                                        <div>Actividades</div>
+                                        <div>Entregable</div>
                                     </div>
-                                    <div>
-                                        <h4>Fase 2: Vectorización y Color (4 días hábiles)</h4>
-                                        <ul class="list-disc list-inside text-zinc-400 pl-2 mt-1 space-y-1">
-                                            <li>Vectorización y aplicación de color con revisiones rápidas.</li>
-                                            <li><strong class="text-zinc-300">Entregable:</strong> 6 personajes a color para aprobación.</li>
-                                        </ul>
+                                    <!-- Table Rows -->
+                                    <div class="space-y-4 md:space-y-0">
+                                        <!-- Row 1 -->
+                                        <div class="grid grid-cols-1 md:grid-cols-[1fr_1fr_2fr_2fr] gap-x-6 gap-y-2 md:py-3 border-b border-zinc-800 last:border-b-0">
+                                            <div>
+                                                <div class="md:hidden text-sm font-semibold text-zinc-400">Fase</div>
+                                                <p class="text-white">Investigación y Bocetaje</p>
+                                            </div>
+                                            <div>
+                                                <div class="md:hidden text-sm font-semibold text-zinc-400 mt-2">Duración</div>
+                                                <p>7 días hábiles</p>
+                                            </div>
+                                            <div>
+                                                <div class="md:hidden text-sm font-semibold text-zinc-400 mt-2">Actividades</div>
+                                                <p>Investigación y bocetaje detallado con foco en concepto y estilo.</p>
+                                            </div>
+                                            <div>
+                                                <div class="md:hidden text-sm font-semibold text-zinc-400 mt-2">Entregable</div>
+                                                <p>Bocetos para primera ronda de feedback.</p>
+                                            </div>
+                                        </div>
+                                        <!-- Row 2 -->
+                                        <div class="grid grid-cols-1 md:grid-cols-[1fr_1fr_2fr_2fr] gap-x-6 gap-y-2 md:py-3 border-b border-zinc-800 last:border-b-0">
+                                            <div>
+                                                <div class="md:hidden text-sm font-semibold text-zinc-400">Fase</div>
+                                                <p class="text-white">Vectorización y Color</p>
+                                            </div>
+                                            <div>
+                                                <div class="md:hidden text-sm font-semibold text-zinc-400 mt-2">Duración</div>
+                                                <p>4 días hábiles</p>
+                                            </div>
+                                            <div>
+                                                <div class="md:hidden text-sm font-semibold text-zinc-400 mt-2">Actividades</div>
+                                                <p>Vectorización y aplicación de color con revisiones rápidas.</p>
+                                            </div>
+                                            <div>
+                                                <div class="md:hidden text-sm font-semibold text-zinc-400 mt-2">Entregable</div>
+                                                <p>6 personajes a color para aprobación.</p>
+                                            </div>
+                                        </div>
+                                        <!-- Row 3 -->
+                                        <div class="grid grid-cols-1 md:grid-cols-[1fr_1fr_2fr_2fr] gap-x-6 gap-y-2 md:py-3">
+                                            <div>
+                                                <div class="md:hidden text-sm font-semibold text-zinc-400">Fase</div>
+                                                <p class="text-white">Poses Adicionales y Entrega</p>
+                                            </div>
+                                            <div>
+                                                <div class="md:hidden text-sm font-semibold text-zinc-400 mt-2">Duración</div>
+                                                <p>5 días hábiles</p>
+                                            </div>
+                                            <div>
+                                                <div class="md:hidden text-sm font-semibold text-zinc-400 mt-2">Actividades</div>
+                                                <p>Poses adicionales y preparación de archivos finales.</p>
+                                            </div>
+                                            <div>
+                                                <div class="md:hidden text-sm font-semibold text-zinc-400 mt-2">Entregable</div>
+                                                <p>Paquete final con 6 personajes en 3 poses.</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h4>Fase 3: Poses Adicionales y Entrega (5 días hábiles)</h4>
-                                        <ul class="list-disc list-inside text-zinc-400 pl-2 mt-1 space-y-1">
-                                            <li>Poses adicionales y entrega final.</li>
-                                            <li><strong class="text-zinc-300">Entregable:</strong> Paquete final con 6 personajes en 3 poses.</li>
-                                        </ul>
-                                    </div>
-                                    <div class="pt-3">
-                                         <p class="font-semibold text-zinc-100 text-base text-center bg-zinc-950/50 p-3 rounded-lg border border-zinc-700">Tiempo Total Estimado: <span class="text-[var(--accent-color)]">16 días hábiles</span></p>
-                                    </div>
+                                </div>
+                                
+                                <div class="pt-6 mt-4 border-t border-zinc-800">
+                                     <p class="font-semibold text-zinc-100 text-base text-center bg-zinc-950/50 p-3 rounded-lg border border-zinc-700">Tiempo Total Estimado: <span class="text-[var(--accent-color)]">16 días hábiles</span></p>
                                 </div>
                             </div>
 
@@ -227,31 +276,70 @@
                                     </svg>
                                     Proceso y Tiempos de Entrega
                                 </h3>
-                                <div class="space-y-4 text-sm pl-9">
+                                
+                                 <!-- Responsive Process Table for Animation -->
+                                <div class="mt-4">
+                                     <!-- Headers for Desktop -->
+                                    <div class="hidden md:grid md:grid-cols-[1fr_1fr_2fr] gap-x-6 text-sm font-semibold text-zinc-400 border-b border-zinc-700 pb-3 mb-3">
+                                        <div>Etapa</div>
+                                        <div>Tiempo por video</div>
+                                        <div>Comentario</div>
+                                    </div>
+                                    <!-- Table Rows -->
+                                    <div class="space-y-4 md:space-y-0">
+                                        <!-- Row 1 -->
+                                        <div class="grid grid-cols-1 md:grid-cols-[1fr_1fr_2fr] gap-x-6 gap-y-2 md:py-3 border-b border-zinc-800 last:border-b-0">
+                                            <div>
+                                                <div class="md:hidden text-sm font-semibold text-zinc-400">Etapa</div>
+                                                <p class="text-white">Preproducción</p>
+                                            </div>
+                                            <div>
+                                                <div class="md:hidden text-sm font-semibold text-zinc-400 mt-2">Tiempo por video</div>
+                                                <p>3 días hábiles</p>
+                                            </div>
+                                            <div>
+                                                <div class="md:hidden text-sm font-semibold text-zinc-400 mt-2">Comentario</div>
+                                                <p>Storyboard con poses clave y animatic sencillo para ritmo.</p>
+                                            </div>
+                                        </div>
+                                        <!-- Row 2 -->
+                                        <div class="grid grid-cols-1 md:grid-cols-[1fr_1fr_2fr] gap-x-6 gap-y-2 md:py-3 border-b border-zinc-800 last:border-b-0">
+                                            <div>
+                                                <div class="md:hidden text-sm font-semibold text-zinc-400">Etapa</div>
+                                                <p class="text-white">Producción</p>
+                                            </div>
+                                            <div>
+                                                <div class="md:hidden text-sm font-semibold text-zinc-400 mt-2">Tiempo por video</div>
+                                                <p>6 días hábiles</p>
+                                            </div>
+                                            <div>
+                                                <div class="md:hidden text-sm font-semibold text-zinc-400 mt-2">Comentario</div>
+                                                <p>Animación limitada con movimientos planos, sin rotaciones complejas.</p>
+                                            </div>
+                                        </div>
+                                        <!-- Row 3 -->
+                                        <div class="grid grid-cols-1 md:grid-cols-[1fr_1fr_2fr] gap-x-6 gap-y-2 md:py-3">
+                                            <div>
+                                                <div class="md:hidden text-sm font-semibold text-zinc-400">Etapa</div>
+                                                <p class="text-white">Post-producción</p>
+                                            </div>
+                                            <div>
+                                                <div class="md:hidden text-sm font-semibold text-zinc-400 mt-2">Tiempo por video</div>
+                                                <p>~1 día hábil</p>
+                                            </div>
+                                            <div>
+                                                <div class="md:hidden text-sm font-semibold text-zinc-400 mt-2">Comentario</div>
+                                                <p>Montaje final, integración de audio y renderizado.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="pt-6 mt-4 border-t border-zinc-800 space-y-4">
+                                     <p class="font-semibold text-zinc-100 text-base text-center bg-zinc-950/50 p-3 rounded-lg border border-zinc-700">Total Estimado por Video: <span class="text-[var(--accent-color)]">10 días hábiles</span></p>
                                     <div>
-                                        <h4>Etapa 1: Preproducción (3 días hábiles)</h4>
-                                        <ul class="list-disc list-inside text-zinc-400 pl-2 mt-1">
-                                            <li>Storyboard con poses clave y animatic sencillo para ritmo.</li>
-                                        </ul>
-                                    </div>
-                                    <div>
-                                        <h4>Etapa 2: Producción (6 días hábiles)</h4>
-                                        <ul class="list-disc list-inside text-zinc-400 pl-2 mt-1">
-                                            <li>Animación limitada con movimientos planos, sin rotaciones complejas.</li>
-                                        </ul>
-                                    </div>
-                                    <div>
-                                        <h4>Etapa 3: Post-producción (~1 día hábil)</h4>
-                                        <ul class="list-disc list-inside text-zinc-400 pl-2 mt-1">
-                                            <li>Montaje final, integración de audio, y renderizado.</li>
-                                        </ul>
-                                    </div>
-                                    <div class="pt-3">
-                                         <p class="font-semibold text-zinc-100 text-base text-center bg-zinc-950/50 p-3 rounded-lg border border-zinc-700">Total Estimado por Video: <span class="text-[var(--accent-color)]">10 días hábiles</span></p>
-                                    </div>
-                                    <div class="pt-3">
                                         <h4 class="text-amber-400">⚠️ Indicaciones sobre Animación</h4>
-                                        <ul class="list-disc list-inside text-zinc-400 pl-2 mt-1 space-y-1">
+                                        <ul class="list-disc list-inside text-zinc-400 pl-2 mt-1 space-y-1 text-sm">
                                             <li>Animación básica con énfasis en cambios de expresión y movimientos planos.</li>
                                             <li>No se incluyen rotaciones complejas de personajes o movimientos 3D.</li>
                                             <li>No se incluyen detalles excesivos que requieran mucho tiempo.</li>
@@ -275,7 +363,14 @@
                                         <svg class="h-6 w-6 text-[var(--accent-color)] flex-shrink-0 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0l.879-.659M7.5 14.25l.879.659c1.171.879 3.07.879 4.242 0l.879-.659M12 21a9 9 0 100-18 9 9 0 000 18z" /></svg>
                                         <div>
                                             <p class="font-medium text-zinc-100">Q2,500.00 por minuto</p>
-                                            <p class="text-sm text-zinc-400">Total por video: Q12,500.00</p>
+                                            <p class="text-sm text-zinc-400">Tarifa base para el trabajo de animación.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-4">
+                                        <svg class="h-6 w-6 text-[var(--accent-color)] flex-shrink-0 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0l.879-.659M7.5 14.25l.879.659c1.171.879 3.07.879 4.242 0l.879-.659M12 21a9 9 0 100-18 9 9 0 000 18z" /></svg>
+                                        <div>
+                                            <p class="font-medium text-zinc-100">Q12,500.00 por video</p>
+                                            <p class="text-sm text-zinc-400">Costo individual por pieza de 5 minutos.</p>
                                         </div>
                                     </div>
                                 </div>
