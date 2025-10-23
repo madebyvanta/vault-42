@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotización de Servicios: Producción Audiovisual Flex Z11</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0A0A0A;
+            --card-bg: rgba(24, 24, 27, 0.6);
+            --card-item-bg: rgba(39, 39, 42, 0.7);
+            --border-color: rgba(63, 63, 70, 0.5);
+            --text-primary: #F4F4F5; /* zinc-100 */
+            --text-secondary: #A1A1AA; /* zinc-400 */
+            --accent-color: #F97316; /* orange-500 */
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-secondary);
+        }
+        .main-container::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 15% 90%, rgba(249, 115, 22, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 20%, rgba(63, 63, 70, 0.15) 0%, transparent 40%);
+            background-attachment: fixed;
+            z-index: -1;
+        }
+        .card {
+            background-color: var(--card-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 20px 50px -10px rgba(0,0,0,0.3);
+        }
+        .animated-item {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .animated-item.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="main-container relative min-h-screen overflow-hidden p-4 md:p-8">
+        <div id="content-to-download">
+            <main class="w-full max-w-3xl mx-auto py-16">
+
+                <header class="text-center max-w-4xl mx-auto mb-16 animated-item">
+                    <h1 class="text-4xl md:text-5xl font-black text-white tracking-tighter leading-tight mb-4">
+                        Cotización de Servicios de Producción
+                    </h1>
+                     <p class="text-lg text-zinc-400">
+                        Proyecto Flex - Grabación Z11
+                    </p>
+                </header>
+
+                <div class="card rounded-2xl p-8 mb-8 animated-item" style="transition-delay: 100ms;">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center text-center md:text-left">
+                        <div>
+                            <p class="text-sm font-semibold uppercase tracking-wider text-zinc-500 mb-2">Cliente</p>
+                            <p class="text-lg font-medium text-white">Vaovao</p>
+                        </div>
+                         <div>
+                            <p class="text-sm font-semibold uppercase tracking-wider text-zinc-500 mb-2">Atención</p>
+                            <p class="text-lg font-medium text-white">Mishel Velez</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold uppercase tracking-wider text-zinc-500 mb-2">Fecha</p>
+                            <p class="text-lg font-medium text-white" id="current-date"><!-- JS --></p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold uppercase tracking-wider text-zinc-500 mb-2">Cotización No.</p>
+                            <p class="text-lg font-medium text-white">SP-2025-010</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card rounded-2xl p-8 md:p-10 animated-item" style="transition-delay: 200ms;">
+                    
+                    <h2 class="text-2xl font-bold text-white tracking-tight mb-8">Detalle del Servicio</h2>
+
+                    <div class="bg-[var(--card-item-bg)] p-6 rounded-lg border border-[var(--border-color)] mb-6">
+                         <h3 class="mb-4 flex items-center text-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--accent-color)] mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />
+                            </svg>
+                            Producción Audiovisual - Medio Día (Flex Z11)
+                        </h3>
+                        <ul class="space-y-3 text-sm pl-9 list-disc list-inside text-zinc-400">
+                            <li>Cobertura de grabación en locación (Zona 11).</li>
+                            <li>Jornada de hasta 3 horas efectivas en sitio.</li>
+                            <li><strong class="text-zinc-200">Incluye logística extraordinaria</strong></li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-10 pt-8 border-t border-[var(--border-color)] text-center">
+                        <p class="text-sm uppercase tracking-widest text-[var(--accent-color)] mb-2 font-semibold">Inversión Total</p>
+                        <p class="total-amount text-5xl font-black text-white tracking-tight" data-final-amount="1100">Q0.00</p>
+                         <p class="text-zinc-400 text-sm mt-1">(Q1,100.00 + IVA)</p>
+                    </div>
+                </div>
+
+                 <div class="max-w-3xl mx-auto mt-12 bg-gray-900/50 border border-gray-800 rounded-xl p-8 animated-item" style="transition-delay: 300ms;">
+                    <h3 class="text-xl font-bold text-white mb-4">Términos y Condiciones</h3>
+                    <ul class="space-y-2 text-gray-400 list-disc list-inside text-sm">
+                        <li>Esta cotización cubre únicamente el servicio de grabación en sitio especificado.</li>
+                        <li>La edición y post-producción del material se cotizarán por separado si son requeridas.</li>
+                        <li><strong class="text-zinc-200">Horas Extra:</strong> Cualquier tiempo adicional requerido en sitio por el cliente se facturará a Q200 + IVA por hora o fracción.</li>
+                    </ul>
+                </div>
+
+            </main>
+        </div>
+        
+        <div class="w-full max-w-5xl mx-auto">
+             <div id="download-section" class="text-center mt-0 mb-16 animated-item" style="transition-delay: 350ms;">
+                <button id="download-pdf-btn" class="bg-[var(--accent-color)] text-white font-bold py-3 px-8 rounded-lg hover:bg-orange-600 transition-colors duration-300 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-opacity-75">
+                    Descargar Cotización en PDF
+                </button>
+            </div>
+            
+            <footer class="text-center mb-16 text-zinc-600 animated-item" style="transition-delay: 500ms;">
+                <p>&copy; 2025 Alex Chajón | Motion Graphics & Web Design</p>
+                 <p class="text-xs text-zinc-700 mt-4 max-w-2xl mx-auto">Cualquier servicio o entregable no especificado se considerará trabajo adicional y se facturará por separado.</p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+             // --- Fecha Dinámica ---
+            const dateElement = document.getElementById('current-date');
+            const today = new Date();
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            if(dateElement) {
+                 dateElement.textContent = `${today.toLocaleDateString('es-ES', options)}`;
+            }
+
+            // --- Animación de Entrada ---
+            const animatedElements = document.querySelectorAll('.animated-item');
+            const observerOptions = { threshold: 0.1 };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('is-visible');
+                        }, parseFloat(entry.target.style.transitionDelay || '0ms'));
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            animatedElements.forEach(el => observer.observe(el));
+
+            // --- Animación de Conteo del Total ---
+            const totalElements = document.querySelectorAll('.total-amount');
+            const animateCount = (element, start, end, duration) => {
+                let startTime = null;
+                const step = (currentTime) => {
+                    if (!startTime) startTime = currentTime;
+                    const progress = Math.min((currentTime - startTime) / duration, 1);
+                    const currentAmount = Math.floor(progress * (end - start) + start);
+                    element.textContent = `Q${currentAmount.toLocaleString('es-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    } else {
+                        element.textContent = `Q${end.toLocaleString('es-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+                    }
+                };
+                window.requestAnimationFrame(step);
+            };
+            const countObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        const finalAmount = parseFloat(entry.target.getAttribute('data-final-amount'));
+                        animateCount(entry.target, 0, finalAmount, 1500);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            totalElements.forEach(el => countObserver.observe(el));
+
+            // --- Función para Descargar PDF ---
+            const downloadBtn = document.getElementById('download-pdf-btn');
+            async function downloadAsPDF() {
+                const element = document.getElementById('content-to-download');
+                const downloadSection = document.getElementById('download-section');
+                const { jsPDF } = window.jspdf;
+                downloadBtn.textContent = 'Generando...';
+                downloadBtn.disabled = true;
+                downloadSection.style.display = 'none';
+                try {
+                    const canvas = await html2canvas(element, { scale: 2, useCORS: true, backgroundColor: '#0A0A0A', logging: false });
+                    const imgData = canvas.toDataURL('image/jpeg', 0.95);
+                    const pdf = new jsPDF({ orientation: 'portrait', unit: 'pt', format: 'a4' });
+                    const imgProps = pdf.getImageProperties(imgData);
+                    const pdfWidth = pdf.internal.pageSize.getWidth();
+                    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+                    let heightLeft = pdfHeight;
+                    let position = 0;
+                    pdf.addImage(imgData, 'JPEG', 0, position, pdfWidth, pdfHeight);
+                    heightLeft -= pdf.internal.pageSize.getHeight();
+                    while (heightLeft > 0) {
+                        position = heightLeft - pdfHeight;
+                        pdf.addPage();
+                        pdf.addImage(imgData, 'JPEG', 0, position, pdfWidth, pdfHeight);
+                        heightLeft -= pdf.internal.pageSize.getHeight();
+                    }
+                    pdf.save('Cotizacion_Flex_Z11_SP-2025-010.pdf');
+                } catch (error) {
+                    console.error("Error al generar el PDF:", error);
+                } finally {
+                    downloadSection.style.display = 'block';
+                    downloadBtn.textContent = 'Descargar Cotización en PDF';
+                    downloadBtn.disabled = false;
+                }
+            }
+            if(downloadBtn) {
+                downloadBtn.addEventListener('click', downloadAsPDF);
+            }
+        });
+    </script>
+</body>
+</html>
+
