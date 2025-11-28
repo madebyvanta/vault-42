@@ -13,7 +13,8 @@
     "react-dom": "^19.2.0",
     "react": "^19.2.0",
     "html2canvas": "1.4.1",
-    "jspdf": "2.5.1"
+    "jspdf": "2.5.1",
+    "wouter": "2.11.0"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",

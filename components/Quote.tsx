@@ -1,17 +1,16 @@
 import React from 'react';
-import { QuoteData } from '../types';
+import { StandardQuoteData } from '../types';
 import { GlassCard } from './GlassCard';
 import { 
   MapPin, 
   Calendar, 
   Hash, 
   CheckCircle2, 
-  AlertCircle, 
-  ArrowRight 
+  AlertCircle 
 } from 'lucide-react';
 
 interface QuoteProps {
-  data: QuoteData;
+  data: StandardQuoteData;
 }
 
 export const Quote: React.FC<QuoteProps> = ({ data }) => {
