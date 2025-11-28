@@ -1,48 +1,27 @@
-export interface LineItem {
+import { ReactNode } from "react";
+
+export interface Feature {
   id: string;
-  description: string;
-  details?: string;
-  price: number;
-}
-
-export interface ClientInfo {
-  name: string;
-  productionLocation: string;
-}
-
-export interface QuoteMetadata {
-  number: string;
-  date: string;
-  validUntil?: string;
-}
-
-// Standard Quote (List based)
-export interface StandardQuoteData {
-  type: 'standard';
-  metadata: QuoteMetadata;
-  client: ClientInfo;
-  items: LineItem[];
-  taxRate: number;
-}
-
-// Plan Based Quote (Card comparison)
-export interface PlanItem {
   title: string;
-  marketValue: number;
-  initialPayment: number;
-  deliveryPayment?: number; // Optional: Payment upon delivery
-  monthlyPayment: number;
-  maintenance: number;
-  totalFirstYear: number;
-  subsequentText: string;
-  isRecommended?: boolean;
+  description: string;
+  icon: ReactNode;
 }
 
-export interface PlanQuoteData {
-  type: 'plans';
-  metadata: QuoteMetadata;
-  client: ClientInfo;
-  plans: PlanItem[];
+export interface PricingDetail {
+  label: string;
+  value: string;
+  subValue?: string;
+  highlight?: boolean;
 }
 
-export type QuoteData = StandardQuoteData | PlanQuoteData;
+export interface PricingPlan {
+  id: string;
+  name: string;
+  subtitle: string;
+  marketValue: string;
+  details: PricingDetail[];
+  totalLabel: string;
+  totalPrice: string;
+  ctaText?: string;
+  isLifetime?: boolean;
+}
