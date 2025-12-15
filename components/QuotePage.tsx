@@ -24,9 +24,7 @@ const QuotePage: React.FC = () => {
             </div>
             <span>Cotización - Mac Estudios</span>
           </div>
-          <button className="hidden md:block px-5 py-2 text-sm font-medium text-white/70 hover:text-white transition-colors">
-            Login
-          </button>
+          {/* Botón Login eliminado */}
         </nav>
 
         <Hero />
