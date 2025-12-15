@@ -34,7 +34,7 @@ const QuotePage: React.FC = () => {
         <Pricing />
         
         <footer className="py-12 border-t border-white/5 text-center text-gray-500 text-sm">
-          <p>© {new Date().getFullYear()} Cotización - Mac Estudios. Todos los derechos reservados.</p>
+          <p>2025 Cotización para Mac Estudios. Valida por 15 días</p>
         </footer>
       </div>
     </div>

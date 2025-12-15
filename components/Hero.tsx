@@ -33,7 +33,7 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-[1.1]"
         >
-          Propuestas en línea, <br />
+          Cotizaciones en línea, <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500">
             todo bajo control.
           </span>
@@ -49,22 +49,7 @@ const Hero: React.FC = () => {
           Envía propuestas digitalmente, confirma su visualización y ordena tus finanzas sin PDFs ni hojas de cálculo.
         </motion.p>
 
-        {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className="flex flex-col sm:flex-row gap-4 mt-8"
-        >
-          <a 
-            href="https://macestudios.vercel.app/"
-            className="group relative px-8 py-4 bg-white text-black font-semibold rounded-xl overflow-hidden hover:scale-105 transition-transform duration-200 inline-flex items-center gap-2"
-          >
-            <span className="relative z-10 flex items-center gap-2">
-              Empezar Ahora <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </span>
-          </a>
-        </motion.div>
+        {/* ...botón eliminado... */}
       </div>
 
       {/* Grid Lines Overlay */}

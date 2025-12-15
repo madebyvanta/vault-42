@@ -6,7 +6,7 @@ const Features: React.FC = () => {
   return (
     <section className="py-24 px-4 md:px-8 relative z-10">
       <div className="max-w-7xl mx-auto mb-16 text-center">
-        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Potencia tu Productora</h2>
+        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Beneficios</h2>
         <p className="text-gray-400 max-w-2xl mx-auto">Herramientas diseñadas para el flujo moderno de trabajo, optimizadas para el crecimiento.</p>
       </div>
 
@@ -175,7 +175,7 @@ const Features: React.FC = () => {
            <div className="p-8">
             <h3 className="text-xl font-bold text-white mb-3">Inteligencia de Negocio</h3>
             <p className="text-gray-400 leading-relaxed text-sm">
-              Deja de adivinar. El sistema te dice automáticamente qué clientes son los más rentables y dónde ajustar.
+              El sistema indica automáticamente qué clientes son los más rentables y dónde realizar ajustes.
             </p>
           </div>
         </GlassCard>

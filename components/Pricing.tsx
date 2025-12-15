@@ -6,30 +6,17 @@ import { PricingPlan } from '../types';
 const Pricing: React.FC = () => {
   const plans: PricingPlan[] = [
     {
-      id: 'monthly',
-      name: 'PLAN MENSUAL',
-      subtitle: 'Modalidad SaaS (Pagas por usar)',
-      marketValue: 'VALOR EN MERCADO: Q 45,000',
-      totalLabel: 'TOTAL PRIMER AÑO',
-      totalPrice: 'Q 19,900',
-      isLifetime: false,
-      details: [
-        { label: 'Pago Inicial (Una sola vez)', value: 'Q 5,500' },
-        { label: 'Mensualidad', value: 'Q 1,200', subValue: '/mes' },
-      ]
-    },
-    {
       id: 'lifetime',
       name: 'PLAN LIFETIME',
       subtitle: 'Un solo pago. Es tuyo para siempre.',
       marketValue: 'VALOR EN MERCADO: Q 45,000',
       totalLabel: 'INVERSIÓN TOTAL ÚNICA',
-      totalPrice: 'Q 21,500',
+      totalPrice: 'Q11,500',
       ctaText: 'Tu empresa es dueña del activo',
       isLifetime: true,
       details: [
-        { label: 'Pago Inicial (Una sola vez)', value: 'Q 10,750' },
-        { label: 'Pago Final (Contra Entrega)', value: 'Q 10,750' },
+        { label: 'Pago Inicial (Una sola vez)', value: 'Q5,750' },
+        { label: 'Pago Final (Contra Entrega)', value: 'Q5,750' },
         { label: 'MENSUALIDAD', value: 'Q 0', highlight: true },
       ]
     }
@@ -42,12 +29,12 @@ const Pricing: React.FC = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
-            ELIGE TU MODALIDAD DE INVERSIÓN
+            MODALIDAD DE INVERSIÓN
           </h2>
           <div className="h-1 w-24 bg-brand-green mx-auto rounded-full" />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div className="flex justify-center items-start">
           {plans.map((plan, index) => (
             <GlassCard 
               key={plan.id} 
@@ -116,7 +103,7 @@ const Pricing: React.FC = () => {
                 
                 {plan.isLifetime && (
                   <p className="mt-6 text-[10px] text-gray-400">
-                    *El servidor (Q125/mes) se paga hasta el 2do año.
+                    *Mantenimiento (Q160/mes) se paga hasta el 2do año.
                   </p>
                 )}
               </div>
