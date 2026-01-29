@@ -137,7 +137,7 @@ const AccessContent: React.FC<AccessContentProps> = ({ startAnimations }) => {
                             <CostBreakdownItem
                                 label="Costo Operativo (Infraestructura)"
                                 price={40}
-                                description="Vercel, Supabase, Storage (10GB Gratis, extra se cobra aparte)"
+                                description="Servidores, Base de Datos y Almacenamiento (10GB Gratis)"
                                 delay={0.2}
                             />
                             <CostBreakdownItem label="Soporte y Mantenimiento" price={20} delay={0.3} />
