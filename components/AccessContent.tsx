@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Check, Server, LifeBuoy, Database, Globe, Smartphone } from 'lucide-react';
+import { Check, Server, LifeBuoy, Database, Globe, Smartphone, Lock, Share2, TrendingUp, Users, Cloud, ShieldCheck, Gift, Palette, Zap, Sparkles } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -63,7 +63,7 @@ const AccessContent: React.FC<AccessContentProps> = ({ startAnimations }) => {
                 <div className="h-1 w-24 bg-gradient-to-r from-purple-500 to-transparent mx-auto rounded-full mt-8" />
             </div>
 
-            {/* INITIAL SETUP CARD */}
+            {/* BASIC MENSUAL PLAN CARD */}
             <div className="reveal-item w-full max-w-4xl group">
                 {/* Animated Gradient Border */}
                 <div className="relative p-[1px] rounded-3xl overflow-hidden">
@@ -73,39 +73,45 @@ const AccessContent: React.FC<AccessContentProps> = ({ startAnimations }) => {
                     <div className="relative bg-black/90 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-white/5">
                         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8 text-reveal-container">
                             <div>
-                                <h2 className="text-3xl font-bold text-white mb-2">Setup Inicial</h2>
+                                <h2 className="text-3xl font-bold text-white mb-2">Basic Mensual</h2>
                                 <span className="inline-block px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-bold tracking-wide uppercase border border-purple-500/20">
-                                    Pago Único
+                                    Suscripción Mensual
                                 </span>
                             </div>
                             <div className="text-right flex flex-col items-end">
-                                <span className="text-4xl md:text-5xl font-bold text-white flex items-center gap-1">
-                                    $<Counter value={500} />
-                                </span>
-                                <div className="flex flex-col items-end">
-                                    <span className="text-gray-400 text-lg"> USD</span>
-                                    <span className="text-xs text-gray-500 font-light">+ IVA si se requiere factura</span>
+                                <div className="flex items-baseline gap-1">
+                                    <span className="text-4xl md:text-5xl font-bold text-white">$<Counter value={120} /></span>
+                                    <span className="text-gray-400 text-lg">/mes</span>
+                                </div>
+                                <div className="mt-2 text-right">
+                                    <span className="text-sm text-purple-400 font-semibold">+ $<Counter value={500} /> Setup Inicial</span>
                                 </div>
                             </div>
                         </div>
 
                         <div className="space-y-6 border-t border-white/10 pt-8">
-                            <p className="text-lg text-gray-300">
-                                Instalación técnica completa y configuración de su nueva instancia.
+                            <p className="text-lg text-gray-300 font-medium">
+                                Plan ideal para comenzar con todas las herramientas esenciales.
                             </p>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <FeatureItem icon={<Globe className="w-5 h-5" />} text="Configuración de Dominios" delay={0.1} />
-                                <FeatureItem icon={<Database className="w-5 h-5" />} text="Base de Datos (Supabase)" delay={0.2} />
-                                <FeatureItem icon={<Server className="w-5 h-5" />} text="Repositorio de Código" delay={0.3} />
-                                <FeatureItem icon={<Smartphone className="w-5 h-5" />} text="Integración de Logos y Branding" delay={0.4} />
-                                <FeatureItem icon={<Check className="w-5 h-5" />} text="Despliegue Inicial (Vercel)" delay={0.5} />
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                                <FeatureItem icon={<Lock className="w-5 h-5" />} text="Acceso Privado: Usuario y Contraseña" delay={0.1} />
+                                <FeatureItem icon={<Share2 className="w-5 h-5" />} text="Envío de Castings y Aprobación vía Link" delay={0.2} />
+                                <FeatureItem icon={<TrendingUp className="w-5 h-5" />} text="Ranking de Mejores Modelos" delay={0.3} />
+                                <FeatureItem icon={<Users className="w-5 h-5" />} text="Administración: Talento, Proyectos y Clientes" delay={0.4} />
+                            </div>
+
+                            <div className="h-px w-full bg-white/10 my-8" />
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                                <FeatureItem icon={<Cloud className="w-5 h-5" />} text="Funcionamiento 24/7 en la nube" delay={0.5} />
+                                <FeatureItem icon={<ShieldCheck className="w-5 h-5" />} text="Protección y Seguridad de Datos" delay={0.6} />
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            {/* MONTHLY PLAN CARD */}
+            {/* ANNUAL PLAN CARD */}
             <div className="reveal-item w-full max-w-4xl">
                 <div className="relative p-[1px] rounded-3xl overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-r from-teal-500 via-emerald-500 to-teal-500 animate-border-flow" style={{ backgroundSize: '200% 200%' }} />
@@ -114,39 +120,111 @@ const AccessContent: React.FC<AccessContentProps> = ({ startAnimations }) => {
                     <div className="relative bg-black/90 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-white/5">
                         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8 text-reveal-container">
                             <div>
-                                <h2 className="text-3xl font-bold text-white mb-2">Mensualidad SaaS</h2>
+                                <div className="mb-4">
+                                    <span className="bg-teal-500 text-black px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase">
+                                        Recomendado
+                                    </span>
+                                </div>
+                                <h2 className="text-3xl font-bold text-white mb-2">Plan Anual</h2>
                                 <span className="inline-block px-3 py-1 bg-teal-500/20 text-teal-300 rounded-full text-xs font-bold tracking-wide uppercase border border-teal-500/20">
-                                    Servicio Recurrente
+                                    Suscripción Anual
                                 </span>
                             </div>
                             <div className="text-right flex flex-col items-end">
-                                <span className="text-4xl md:text-5xl font-bold text-white flex items-center gap-1">
-                                    $<Counter value={100} />
-                                </span>
-                                <div className="flex flex-col items-end">
-                                    <span className="text-gray-400 text-lg"> / mes</span>
-                                    <span className="text-xs text-gray-500 font-light">+ IVA si se requiere factura</span>
+                                <div className="flex items-baseline gap-1">
+                                    <span className="text-4xl md:text-5xl font-bold text-white">$<Counter value={1300} /></span>
+                                    <span className="text-gray-400 text-lg">/año</span>
+                                </div>
+                                <div className="mt-2 text-right">
+                                    <span className="text-sm text-teal-400 font-bold uppercase tracking-wider">Instalación GRATIS</span>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="space-y-4 border-t border-white/10 pt-8">
-                            <h3 className="text-xl font-semibold text-white mb-4">Desglose Mensual:</h3>
-
-                            <CostBreakdownItem label="Mensualidad Base" price={40} delay={0.1} />
-                            <CostBreakdownItem
-                                label="Costo Operativo (Infraestructura)"
-                                price={40}
-                                description="Servidores, Base de Datos y Almacenamiento (10GB Gratis)"
-                                delay={0.2}
-                            />
-                            <CostBreakdownItem label="Soporte y Mantenimiento" price={20} delay={0.3} />
-
-                            <div className="mt-8 p-4 bg-white/5 rounded-xl border border-white/5">
-                                <p className="text-sm text-gray-400 leading-relaxed">
-                                    <span className="text-white font-semibold">Nota:</span> Si se requiere modificar la app o agregar nuevas funciones, se evaluará la solicitud y se enviará una nueva cotización dependiendo del alcance.
-                                </p>
+                        <div className="space-y-6 border-t border-white/10 pt-8">
+                            <p className="text-lg text-gray-300 font-medium">
+                                Máximo valor y todos los beneficios premium incluidos.
+                            </p>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                                <FeatureItem icon={<Check className="w-5 h-5" />} text="Todo lo del Plan Mensual" delay={0.1} />
+                                <FeatureItem icon={<Gift className="w-5 h-5" />} text="Módulo de Cumpleaños (Exclusivo)" delay={0.2} />
                             </div>
+
+                            <div className="h-px w-full bg-white/10 my-8" />
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                                <FeatureItem icon={<LifeBuoy className="w-5 h-5" />} text="Prioridad en Soporte Técnico" delay={0.3} />
+                                <FeatureItem icon={<Palette className="w-5 h-5" />} text="Mejoras Continuas de Diseño Visual (UI)" delay={0.4} />
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* SUPPLEMENTAL CARDS GRID */}
+            <div className="reveal-item w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 mb-6">
+                {/* WEB MANAGEMENT KIT */}
+                <div className="relative p-[1px] rounded-3xl overflow-hidden group">
+                    <div className="absolute inset-0 bg-white/5 group-hover:bg-purple-500/10 transition-colors duration-500" />
+                    <div className="relative bg-black/40 backdrop-blur-xl rounded-3xl p-6 border border-white/5 h-full flex flex-col">
+                        <div className="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 className="text-lg font-bold text-white mb-1">Kit Gestión Web</h3>
+                                <span className="text-[10px] text-purple-400 font-bold uppercase tracking-wider">Módulo Extra</span>
+                            </div>
+                            <Globe className="w-5 h-5 text-purple-400" />
+                        </div>
+                        <div className="space-y-2 flex-grow">
+                            <SmallFeatureItem text="Control total de visibilidad pública" />
+                            <SmallFeatureItem text="Buscador y filtros de talentos" />
+                            <SmallFeatureItem text="Switch encendido/apagado rápido" />
+                            <SmallFeatureItem text="Gestión de portafolios web" />
+                        </div>
+                        <div className="mt-4 pt-3 border-t border-white/5">
+                            <span className="text-[10px] text-gray-500 italic">Cotización por aparte</span>
+                        </div>
+                    </div>
+                </div>
+
+                {/* DATA ONBOARDING SERVICE */}
+                <div className="relative p-[1px] rounded-3xl overflow-hidden group">
+                    <div className="absolute inset-0 bg-white/5 group-hover:bg-teal-500/10 transition-colors duration-500" />
+                    <div className="relative bg-black/40 backdrop-blur-xl rounded-3xl p-6 border border-white/5 h-full flex flex-col">
+                        <div className="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 className="text-lg font-bold text-white mb-1">Carga de Datos</h3>
+                                <span className="text-[10px] text-teal-400 font-bold uppercase tracking-wider">Servicio de Onboarding</span>
+                            </div>
+                            <Zap className="w-5 h-5 text-yellow-500 animate-pulse-zap" />
+                        </div>
+                        <p className="text-xs text-gray-400 leading-relaxed mb-4">
+                            ¿No tienes tiempo? Nosotros lo hacemos por ti.<br /><br />
+                            Subimos todo tu material fotográfico y configuramos los datos y las fotografías de tus modelos para que no tengas que invertir tiempo en eso.
+                        </p>
+                        <div className="mt-auto pt-3 border-t border-white/5">
+                            <span className="text-[10px] text-gray-500 italic">Consultar disponibilidad</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* CUSTOMIZATION BENTO CARD (FULL WIDTH) */}
+            <div className="reveal-item w-full max-w-4xl mt-6">
+                <div className="relative p-[1px] rounded-3xl overflow-hidden group">
+                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-teal-500/20 to-purple-500/20 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="relative bg-black/60 backdrop-blur-xl rounded-3xl p-8 border border-white/5 flex flex-col md:flex-row items-center gap-6">
+                        <div className="p-4 rounded-2xl bg-gradient-to-br from-purple-500/20 to-teal-500/20 border border-white/10">
+                            <Sparkles className="w-8 h-8 text-white animate-pulse" />
+                        </div>
+                        <div className="flex-grow text-center md:text-left">
+                            <h3 className="text-xl font-bold text-white mb-2">Totalmente Personalizable</h3>
+                            <p className="text-gray-400 leading-relaxed">
+                                El sistema se puede adaptar 100% al flujo de trabajo personalizado de la agencia. En programación no hay nada imposible; cualquier idea que necesites se puede automatizar a tu medida.
+                            </p>
+                        </div>
+                        <div className="hidden md:block px-6 py-2 rounded-full border border-white/10 bg-white/5 text-xs text-gray-400 font-medium">
+                            Infinite Possibilities
                         </div>
                     </div>
                 </div>
@@ -172,6 +250,13 @@ const AccessContent: React.FC<AccessContentProps> = ({ startAnimations }) => {
                 }
                 .animate-border-flow {
                     animation: border-flow 4s ease infinite;
+                }
+                @keyframes pulse-zap {
+                    0%, 100% { opacity: 1; transform: scale(1); }
+                    50% { opacity: 0.5; transform: scale(1.2); filter: drop-shadow(0 0 10px #f59e0b); }
+                }
+                .animate-pulse-zap {
+                    animation: pulse-zap 1.5s ease-in-out infinite;
                 }
             `}</style>
 
@@ -253,6 +338,15 @@ const CostBreakdownItem = ({ label, price, description, delay }: { label: string
                 </span>
             </div>
             {description && <span className="text-xs text-gray-500 mt-1">{description}</span>}
+        </div>
+    );
+};
+
+const SmallFeatureItem = ({ text }: { text: string }) => {
+    return (
+        <div className="flex items-center gap-2 text-gray-400">
+            <Check className="w-3 h-3 text-brand-green" />
+            <span className="text-xs">{text}</span>
         </div>
     );
 };
