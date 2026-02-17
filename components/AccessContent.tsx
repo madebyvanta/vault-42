@@ -143,7 +143,7 @@ const AccessContent: React.FC<AccessContentProps> = ({ startAnimations }) => {
 
                         <div className="space-y-6 border-t border-white/10 pt-8">
                             <p className="text-lg text-gray-300 font-medium">
-                                Máximo valor y todos los beneficios premium incluidos.
+                                Máximo valor y todos los beneficios incluidos.
                             </p>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
                                 <FeatureItem icon={<Check className="w-5 h-5" />} text="Todo lo del Plan Mensual" delay={0.1} />
@@ -175,11 +175,9 @@ const AccessContent: React.FC<AccessContentProps> = ({ startAnimations }) => {
                             </div>
                             <Globe className="w-5 h-5 text-purple-400" />
                         </div>
-                        <div className="space-y-2 flex-grow">
-                            <SmallFeatureItem text="Control total de visibilidad pública" />
-                            <SmallFeatureItem text="Buscador y filtros de talentos" />
-                            <SmallFeatureItem text="Switch encendido/apagado rápido" />
-                            <SmallFeatureItem text="Gestión de portafolios web" />
+                        <div className="space-y-3 flex-grow">
+                            <SmallFeatureItem text="Activa o desactiva la visibilidad del modelo en la web con un solo clic." />
+                            <SmallFeatureItem text="Administra fácilmente qué fotos aparecen en el perfil del modelo." />
                         </div>
                         <div className="mt-4 pt-3 border-t border-white/5">
                             <span className="text-[10px] text-gray-500 italic">Cotización por aparte</span>
